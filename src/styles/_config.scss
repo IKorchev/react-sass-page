@@ -1,0 +1,17 @@
+$grey: #eddcd2;
+$light: #f0efeb;
+$lightpurple: #fff1e6;
+$lightgrey: #b7b7a4;
+$darkgrey: #a5a58d;
+$brown: darken($grey, 50);
+$blue: #eeeeee;
+$purple: #ddbea9;
+
+@mixin set-color($bgcolor, $textcolor) {
+  background-color: $bgcolor;
+  color: $textcolor;
+}
+@mixin border-bg-color($bgcolor, $border) {
+  background-color: darken($bgcolor, 43);
+  border-bottom: 1px solid $border;
+}

@@ -1,0 +1,95 @@
+// NAVBAR
+#navbar-container {
+  #navbar {
+    @include font-size(1rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    z-index: 0;
+    #nav {
+      margin-right: 3%;
+      &:last-child {
+        padding: 14px 0;
+        border-right: 1px solid $lightpurple;
+      }
+    }
+    a:not(#title) {
+      padding: 14px 20px;
+      border-left: 1px solid $lightpurple;
+      &:hover {
+        background-color: darken($grey, 3);
+        border-bottom: 1px solid $lightpurple;
+      }
+    }
+    #title {
+      margin-top: 10px;
+      padding: 0 50px;
+      color: $brown;
+      text-decoration: none;
+      @include font-size(3rem);
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+// COLLAPSIBLE
+#hamburger {
+  display: none;
+  z-index: 5;
+  cursor: pointer;
+  padding: 5px;
+  background: darken($grey, 50);
+  &:hover {
+    @include border-bg-color($grey, $brown);
+  }
+  i {
+    color: white;
+    font-size: 3rem;
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#collapse {
+  transition: transform 0.4s ease-in-out;
+}
+#collapsed {
+  transform: translateY(555px);
+  transition: transform 0.4s ease-in-out;
+}
+.collapsible {
+  text-decoration: none;
+  position: absolute;
+  background: darken($grey, 50);
+  top: -500px;
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  overflow: hidden;
+  z-index: 0;
+  border-bottom: 2px solid black;
+  a {
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: bottom;
+    height: 100%;
+    width: 100%;
+    &:hover {
+      @include border-bg-color($grey, $brown);
+    }
+  }
+}
