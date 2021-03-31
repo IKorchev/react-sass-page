@@ -1,11 +1,16 @@
 import React from "react"
-import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import MyNav from "../components/Navbar"
+import { Container } from "react-bootstrap"
 
 const Aboutme = () => {
   return (
     <div id='about-me'>
-      <Navbar />
-      <h1>About me page</h1>
+      <MyNav />
+      <Container fluid className='bg-light p-5'>
+        <h1 className='text-center p-5'>This page is under construction</h1>
+      </Container>
+      <Footer />
     </div>
   )
 }

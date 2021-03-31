@@ -1,46 +1,26 @@
-import React, { useState } from "react"
-
-const Navbar = () => {
-  const [isActive, setIsActive] = useState(true)
-
-  const handleResize = () => {
-    if (window.innerWidth > 599) {
-      setIsActive(true)
-    }
-  }
-  const handleToggle = () => {
-    if (!isActive) {
-      setIsActive(true)
-      console.log(isActive)
-    } else {
-      setIsActive(false)
-      console.log(isActive)
-    }
-  }
-  window.onresize = handleResize
+import React from "react"
+import { Link } from "react-router-dom"
+import { Navbar } from "react-bootstrap"
+const MyNav = () => {
   return (
-    <div id='navbar-container'>
-      <div id='hamburger' onClick={handleToggle}>
-        <i className={`bi ${isActive ? "bi-list" : "bi-x"}`}></i>
-      </div>
-      <div className='collapsible' id={`${isActive ? "collapse" : "collapsed"}`}>
-        <a href='/'>Home</a>
-        <a href='/aboutme'>About me</a>
-        <a href='/work'>My work</a>
-        <a href='/contact'>Contact</a>
-      </div>
-      <div id='navbar'>
-        <a id='title' href='/'>
-          Home
-        </a>
-        <div id='nav'>
-          <a href='/aboutme'>About me</a>
-          <a href='/work'>My work</a>
-          <a href='/contact'>Contact</a>
-        </div>
-      </div>
-    </div>
+    <Navbar className='bg-light' expand='lg'>
+      <Link exact='true' to='/'>
+        <Navbar.Brand className='text-primary'>Home</Navbar.Brand>
+      </Link>
+      <Navbar.Toggle></Navbar.Toggle>
+      <Navbar.Collapse className='justify-content-end'>
+        <Link to='/aboutme' className='px-4 d-block text-center  lead'>
+          About
+        </Link>
+        <Link to='/work' className='px-4 d-block text-center  lead'>
+          Work
+        </Link>
+        <Link to='/contact' className='px-4 d-block text-center lead'>
+          Submit
+        </Link>
+      </Navbar.Collapse>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default MyNav
