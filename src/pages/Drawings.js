@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import { Container, Col, Card, Row } from "react-bootstrap"
 import Footer from "../components/Footer"
+
 const Work = () => {
+  const [data, setData] = useState([])
   useEffect(() => {
-    const fetchImages = async () => {
+    ;(async () => {
       const _data = await fetch("/images")
       const json = await _data.json()
-      setData(Array.from(json))
-    }
-    fetchImages()
+      setData(json)
+    })()
   }, [])
-  const [data, setData] = useState([])
 
   return (
     <Container fluid id='my-work' className='p-0 bg-light'>

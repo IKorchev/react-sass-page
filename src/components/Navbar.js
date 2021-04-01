@@ -8,7 +8,7 @@ const MyNav = () => {
       <Link exact='true' to='/'>
         <Navbar.Brand className='text-primary'>Home</Navbar.Brand>
       </Link>
-      <Navbar.Toggle></Navbar.Toggle>
+      <Navbar.Toggle className='bg-primary px-2 py-1'></Navbar.Toggle>
       <Navbar.Collapse className='justify-content-end lead text-center '>
         <Link to='/aboutme' className='p-3 d-block'>
           About

@@ -30,10 +30,6 @@ db.once("connected", () => console.log("mongoose connection established"))
 app.use(express.static(__dirname + "/build"))
 app.use(express.json())
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/build", "index.html"))
-})
-
 app.post("/submit/:password", async (req, res) => {
   if (req.params.password === ADMIN_PASS) {
     console.log(req.body)
@@ -53,12 +49,9 @@ app.post("/submit/:password", async (req, res) => {
 })
 
 app.get("/images", async (req, res) => {
-  await Image.find((err, docs) => {
-    if (!err) {
-      return res.json(docs)
-    } else {
-      return res.sendStatus(500)
-    }
+  Image.find({}, (err, doc) => {
+    console.log(doc)
+    res.send(doc)
   })
 })
 
@@ -75,6 +68,10 @@ app.delete("/delete/:url", async (req, res) => {
     console.log(err.message)
     res.sendStatus(500)
   }
+})
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/build", "index.html"))
 })
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`))
