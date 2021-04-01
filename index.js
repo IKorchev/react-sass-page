@@ -1,4 +1,5 @@
 require("dotenv").config()
+const path = require("path")
 const express = require("express")
 const PORT = process.env.PORT || 5500
 const ADMIN_PASS = process.env.ADMIN_PASSWORD
@@ -29,6 +30,10 @@ db.once("connected", () => console.log("mongoose connection established"))
 app.use(express.static(__dirname + "/build"))
 app.use(express.json())
 
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/build", "index.html"))
+})
+
 app.post("/submit/:password", async (req, res) => {
   if (req.params.password === ADMIN_PASS) {
     console.log(req.body)
@@ -50,9 +55,9 @@ app.post("/submit/:password", async (req, res) => {
 app.get("/images", async (req, res) => {
   await Image.find((err, docs) => {
     if (!err) {
-      res.json(docs)
+      return res.json(docs)
     } else {
-      res.sendStatus(500)
+      return res.sendStatus(500)
     }
   })
 })

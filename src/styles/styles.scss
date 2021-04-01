@@ -8,6 +8,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background: $light;
+}
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bolder;
@@ -16,6 +19,7 @@
   font-weight: bold;
 }
 #footer {
+  margin: 100px 0;
   i {
     font-size: 1.5rem;
   }

@@ -1,7 +1,7 @@
 import "./styles/styles.scss"
 import Main from "./components/Main"
 import Aboutme from "./pages/Aboutme"
-import Work from "./pages/Work"
+import Drawings from "./pages/Drawings"
 import Submit from "./pages/Submit"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
@@ -11,7 +11,7 @@ function App() {
       <div className='App' id='home'>
         <Route exact path='/' component={Main} />
         <Route path='/aboutme' component={Aboutme} />
-        <Route path='/work' component={Work} />
+        <Route path='/drawings' component={Drawings} />
         <Route path='/contact' component={Submit} />
       </div>
     </Router>

@@ -7,7 +7,18 @@ $main-height-smaller: 200px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  @media (max-width: 992px) {
+    margin: 0 3%;
+  }
 }
 #main {
   height: 70vh;
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
 }

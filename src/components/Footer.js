@@ -9,7 +9,7 @@ const Footer = () => {
   )
 
   return (
-    <Container fluid className='bg-dark p-5 text-center text-light' id='footer'>
+    <Container fluid className='bg-dark py-5 px-2 text-center text-light' id='footer'>
       <h3>Find me on social media:</h3>
       <Container>
         <a href='#a' className='mx-3'>
