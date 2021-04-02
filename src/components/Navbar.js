@@ -4,20 +4,25 @@ import { Navbar, Container } from "react-bootstrap"
 
 const MyNav = () => {
   return (
-    <Navbar expand='lg' id='navbar'>
-      <Container>
+    <Navbar expand='lg'>
+      <Container id='navbar'>
         <Link exact='true' to='/'>
-          <Navbar.Brand className='text-primary'>Home</Navbar.Brand>
+          <Navbar.Brand className='text-primary'>Hai Anh</Navbar.Brand>
         </Link>
-        <Navbar.Toggle className='bg-info px-2 py-1'></Navbar.Toggle>
-        <Navbar.Collapse className='justify-content-end lead text-center '>
-          <Link to='/aboutme' className='p-3 d-block'>
+        <Navbar.Toggle className='bg-info my-4'></Navbar.Toggle>
+        <Navbar.Collapse
+          className=' justify-content-end lead text-center'
+          id='nav-collapse'>
+          <Link exact='true' to='/' className='px-4 py-4  d-block'>
+            Home
+          </Link>
+          <Link to='/aboutme' className='px-4 py-4 d-block'>
             About
           </Link>
-          <Link to='/drawings' className='p-3 d-block'>
+          <Link to='/drawings' className='px-4 py-4 d-block'>
             Drawings
           </Link>
-          <Link to='/contact' className='p-3 d-block'>
+          <Link to='/contact' className='px-4 py-4 d-block'>
             Submit
           </Link>
         </Navbar.Collapse>

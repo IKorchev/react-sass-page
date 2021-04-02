@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <Container fluid className='p-0'>
       <Navbar />
-      <Container>
+      <Container className="mt-5">
         <h1 className='text-center text-dark my-4'>Submit a drawing</h1>
         <FormComponent />
       </Container>
