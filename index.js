@@ -50,7 +50,6 @@ app.post("/submit/:password", async (req, res) => {
 
 app.get("/images", async (req, res) => {
   Image.find({}, (err, doc) => {
-    console.log(doc)
     res.send(doc)
   })
 })

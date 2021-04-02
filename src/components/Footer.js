@@ -9,25 +9,25 @@ const Footer = () => {
   )
 
   return (
-    <Container fluid className='bg-dark py-5 px-2 text-center text-light' id='footer'>
-      <h3>Find me on social media:</h3>
-      <Container>
-        <a href='#a' className='mx-3'>
-          <i className='bi bi-instagram'></i>
-        </a>
-        <a href='#a' className='mx-3'>
-          <i className='bi bi-facebook'></i>
-        </a>
-        <OverlayTrigger
-          placement='top'
-          delay={{ show: 250, hide: 400 }}
-          overlay={renderTooltip}>
-          <a className='mx-3' href='#a' variant='success'>
-            <i className='bi bi-envelope'></i>
+      <Container fluid className='bg-dark py-5 text-center text-light' id='footer'>
+        <h3>Find me on social media:</h3>
+        <Container fluid>
+          <a href='#a' className='mx-3'>
+            <i className='bi bi-instagram'></i>
           </a>
-        </OverlayTrigger>
+          <a href='#a' className='mx-3'>
+            <i className='bi bi-facebook'></i>
+          </a>
+          <OverlayTrigger
+            placement='top'
+            delay={{ show: 250, hide: 400 }}
+            overlay={renderTooltip}>
+            <a className='mx-3' href='#a' variant='success'>
+              <i className='bi bi-envelope'></i>
+            </a>
+          </OverlayTrigger>
+        </Container>
       </Container>
-    </Container>
   )
 }
 

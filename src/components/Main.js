@@ -6,13 +6,13 @@ import { Container, Row, Col } from "react-bootstrap"
 const Main = () => {
   return (
     <Container fluid className='m-0 p-0'>
-      <Navbar />
-      <Container fluid className='bg-light p-0 pt-5' id='main'>
+        <Navbar />
+      <Container fluid className='p-0 pt-5' id='main'>
         <Row id='main-header' className='m-0 justify-content-center'>
           <Col
             lg={5}
-            className='main-column bg-light d-flex flex-column justify-content-start align-items-center '>
-            <Container className='text-center mt-5 pt-5 bg-light' id='main-header'>
+            className='main-column d-flex flex-column justify-content-start align-items-center '>
+            <Container className='text-center mt-5 pt-5' id='main-header'>
               <h1 className='text-dark mb-5'>Hai Anh</h1>
               <Container
                 id='quotes'
@@ -31,7 +31,7 @@ const Main = () => {
             </Container>
             <Container className='d-flex justify-content-center'></Container>
           </Col>
-          <Col lg={4} id='main-picture' className='bg-light main-column p-0'></Col>
+          <Col lg={4} id='main-picture' className='main-column p-0'></Col>
         </Row>
         <Footer />
       </Container>

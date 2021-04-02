@@ -1,6 +1,5 @@
 @import "~rfs/scss";
 @import "./config";
-@import "./main";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
 * {
@@ -9,35 +8,71 @@
   box-sizing: border-box;
 }
 body {
-  background: $light;
+  background: rgb(250, 246, 245);
+  background: linear-gradient(
+    10deg,
+    rgba(250, 246, 245, 1) -150%,
+    rgba(253, 236, 241, 1) 100%
+  );
 }
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bolder;
-}
-.nav-link {
-  font-weight: bold;
-}
-#footer {
-  margin: 100px 0;
-  i {
-    font-size: 1.5rem;
+
+#main-header {
+  h1 {
+    font-size: 5rem;
+    font-family: "Fredericka the Great", cursive;
   }
 }
 
+#quotes {
+  max-width: 400px;
+  // padding-right: 3.6rem;
+}
+$main-height: 400px;
+$main-height-smaller: 200px;
+
+#main-picture {
+  height: $main-height;
+  background-image: url("../assets/artist.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  @media (max-width: 992px) {
+    margin: 0 3%;
+  }
+}
+#main {
+  height: 70vh;
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+#navbar {
+  .navbar-brand {
+    font-size: 2rem;
+  }
+  a {
+    font-weight: bold;
+    margin: 0 20px;
+  }
+}
 #form-container {
   width: 30% !important;
 
   @media (max-width: 2000px) {
-    width: 25% !important;
-  }
-  @media (max-width: 1600px) {
-    width: 40% !important;
-  }
-  @media (max-width: 1204px) {
-    width: 67% !important;
+    width: 50% !important;
   }
   @media (max-width: 990px) {
     width: 100% !important;
+  }
+}
+#footer {
+  i {
+    font-size: 1.5rem;
   }
 }
