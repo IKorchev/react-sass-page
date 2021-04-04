@@ -2,7 +2,7 @@ import "./styles/styles.scss"
 import Home from "./components/Home"
 import Aboutme from "./pages/Aboutme"
 import Drawings from "./pages/Drawings"
-import Submit from "./pages/Submit"
+import Submit from "./pages/Contact"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
 function App() {

@@ -11,27 +11,27 @@ const Footer = () => {
   return (
     <Container fluid className='bg-dark py-3 text-center text-light' id='footer'>
       <h3>Social media</h3>
-      <Container fluid className="mt-3">
+      <Container fluid className='mt-3'>
         <a
           href='https://www.instagram.com/hai.sketch/'
           target='_blank'
           rel='noreferrer'
           className='mx-3'>
-          <i class='fab fa-instagram'></i>
+          <i className='fab fa-instagram'></i>
         </a>
         <a
           href='https://www.instagram.com/hai.sketch/'
           target='_blank'
           rel='noreferrer'
           className='mx-3'>
-          <i class='fab fa-pinterest'></i>
+          <i className='fab fa-pinterest'></i>
         </a>
         <OverlayTrigger
           placement='top'
           delay={{ show: 250, hide: 400 }}
           overlay={renderTooltip}>
           <a className='mx-3' href='#a' variant='success'>
-            <i class='far fa-envelope'></i>
+            <i className='far fa-envelope'></i>
           </a>
         </OverlayTrigger>
       </Container>

@@ -10,7 +10,7 @@ const Home = () => {
       <Navbar />
       <Container id='main-content'>
         <Row id='main-header' className='justify-content-center align-items-center'>
-          <Col lg={6} className='main-column d-flex flex-column align-items-center '>
+          <Col lg={5}>
             <Container className='text-center pt-5'>
               <h1 className='text-dark mb-5'>Hai Anh</h1>
               <Container
@@ -28,10 +28,9 @@ const Home = () => {
                 </figure>
               </Container>
             </Container>
-
             <Container className='d-flex justify-content-center'></Container>
           </Col>
-          <Col lg={6} id='main-picture' className='main-column p-0'>
+          <Col lg={5} id='main-picture' className='main-column p-0'>
             <img src={Image} width='100%' alt='Myself'></img>
           </Col>
         </Row>

@@ -26,6 +26,14 @@ body {
     font-size: 2.5rem;
   }
 }
+.visually-hidden {
+  display: none !important;
+}
+#main-picture {
+  @media (max-width: 992px) {
+    margin-left: 70px;
+  }
+}
 #form-container {
   width: 30% !important;
 
