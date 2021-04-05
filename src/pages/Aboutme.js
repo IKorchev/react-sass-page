@@ -7,8 +7,8 @@ const Aboutme = () => {
   return (
     <Container fluid className='p-0'>
       <MyNav />
-      <Container fluid className='p-5' id='about-me'>
-        <h1 className='text-center p-5'>This page is under construction</h1>
+      <Container fluid id='about-me'>
+        <h1 className='header-text text-center p-5'>About me</h1>
       </Container>
       <Footer />
     </Container>

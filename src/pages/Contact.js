@@ -9,7 +9,7 @@ const Contact = () => {
     <Container fluid className='p-0'>
       <Navbar />
       <Container className='mt-5'>
-        <h1 className='text-center text-dark'>Contact me</h1>
+        <h1 className='text-center text-dark header-text'>Contact me</h1>
         <FormComponent />
       </Container>
       <Footer />

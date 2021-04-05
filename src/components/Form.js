@@ -1,27 +1,26 @@
 import React, { useState } from "react"
-import { Container, Form, Alert } from "react-bootstrap"
+import { Container, Form } from "react-bootstrap"
 import AlertComponent from "./AlertComponent"
 
 const FormComponent = () => {
   const [nameValue, setNameValue] = useState("")
   const [emailValue, setEmailValue] = useState("")
   const [messageValue, setMessageValue] = useState("")
-  const [alert, setAlert] = useState({
-    className: "visually-hidden"
-    
-  })
+  const [alert, setAlert] = useState(null)
 
   const handleFormSubmit = async (e) => {
     e.preventDefault()
+
     const data = await fetch(`/submit`, {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify({ name: nameValue, email: emailValue, message: messageValue }),
     })
-    if (data.status === 200) {
-      setAlert("")
-    } else {
-    }
+    console.log(data)
+    setAlert(data.status)
+
+    // eslint-disable-next-line no-sequences
+    e.target.reset()
   }
 
   return (
@@ -63,16 +62,7 @@ const FormComponent = () => {
         </Form.Group>
         <Form.Control className='btn-primary' type='submit' />
       </Form>
-      <AlertComponent
-        show={alert}
-        variant='success'
-        message='Message sent successfully'
-      />
-      <AlertComponent
-        show={alert}
-        variant='danger'
-        message='Could not send the message, please try again later.'
-      />
+      <AlertComponent show={alert} />
     </Container>
   )
 }

@@ -3,10 +3,10 @@ const path = require("path")
 const express = require("express")
 const PORT = process.env.PORT || 5501
 const app = express()
-const { transporter } = require("./nodemailer")
+const { transporter } = require("./backend/nodemailer")
+const { fetchDataFromContentful } = require("./backend/contentful")
 
 // MIDDLEWARE
-app.use(express.static(__dirname + "/build"))
 app.use(express.json())
 
 app.post("/submit", async (req, res) => {
@@ -16,33 +16,19 @@ app.post("/submit", async (req, res) => {
     subject: `New email from: ${req.body.email}, ${req.body.name}`,
     text: req.body.message,
   }
-  try {
-    transporter.sendMail(emailOptions, function (error, info) {
-      if (error) {
-        res.sendStatus(500)
-      } else {
-        console.log("Email sent: " + info.response)
-        res.sendStatus(200)
-      }
-    })
-  } catch (err) {
-    console.log(err.message)
-  }
+  transporter.sendMail(emailOptions, (error, info) => {
+    if (error) {
+      res.sendStatus(500)
+    } else {
+      console.log("Email sent: " + info.response)
+      res.sendStatus(200)
+    }
+  })
 })
 
-app.delete("/delete/:url", async (req, res) => {
-  try {
-    const data = await Image.deleteOne({ url: req.params.url })
-    if (data.deletedCount > 0) {
-      res.sendStatus(200)
-      console.log("item deleted")
-    } else {
-      res.sendStatus(500)
-    }
-  } catch (err) {
-    console.log(err.message)
-    res.sendStatus(500)
-  }
+app.post("/drawings", async (req, res) => {
+  const data = await fetchDataFromContentful()
+  res.send(data)
 })
 
 app.get("/*", (req, res) => {
